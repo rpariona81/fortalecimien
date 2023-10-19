@@ -10,16 +10,19 @@ class TestController extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Career_model');
         $this->load->model('Regionplanes_model');
+        $this->load->model('Oferta_model');
     }
 
     public function index()
     {
         //$data['query'] = $this->Career_model->get_all();
-        $data['query'] = $this->Regionplanes_model->getRegionesPlanes();
+        //$data['query'] = $this->Regionplanes_model->getRegionesPlanes();
+        $data['query'] = $this->Oferta_model->getOfertaEducativa();
         //print_r($data['query']);
-        //return json_encode($data);
+        //echo json_encode($data);
         //return $data;
-        $this->load->view('tabletest', $data);
+        //$this->load->view('tabletest', $data);
+        $this->load->view('tabletestOferta', $data);
         //$this->load->view('template-app', $data);
         //$this->load->view('testws', $data);
         //$this->load->view('testview', $data);

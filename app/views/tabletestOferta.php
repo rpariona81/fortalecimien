@@ -319,19 +319,24 @@
                                     <h5 class="card-title mb-0 text-info">Empty card</h5>
                                 </div>
                                 <div class="card-body">
-                                    <table id="example" class="table table-hover" style="width:100%">
+                                    <table id="example" class="table table-hover table-striped" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th colspan="7" class="heading"><span style="float: right">Jquery Datatables</span></th>
                                             </tr>
                                             <tr class="bg-warning text-dark">
-                                                <th>Región ID</th>
                                                 <th>Región</th>
-                                                <th>Cant IEST</th>
-                                                <th>Etapa ID</th>
-                                                <th>Etapa</th>
-                                                <th>Doc Aprobación</th>
-                                                <th>Fecha Doc</th>
+                                                <th>Cod Mod</th>
+                                                <th>Instituto</th>
+                                                <th>Cod Oferta</th>
+                                                <th>Programa de estudios</th>
+                                                <th>Es oferta actual</th>
+                                                <th>Tiene admisión</th>
+                                                <th>Optimización</th>
+                                                <th>Condición DISERTPA</th>
+                                                <th>Nro Oficio DISERTPA</th>
+                                                <th>Fecha Oficio</th>
+                                                <th>Observaciones</th>
                                                 <th>Última actualización</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -339,13 +344,18 @@
                                         <tbody>
                                             <?php foreach ($query as $item) : ?>
                                                 <tr>
-                                                    <td><?= $item->region_id ?></td>
                                                     <td><?= $item->region ?></td>
-                                                    <td><?= $item->cant_institutos ?></td>
-                                                    <td><?= $item->cod_etapa ?></td>
-                                                    <td><?= $item->item ?></td>
-                                                    <td><?= $item->documento_aprobacion ?></td>
-                                                    <td><?= $item->fecha_aprobacion ? date_format($item->fecha_aprobacion, 'd/m/Y') : '' ?></td>
+                                                    <td><?= $item->cod_mod ?></td>
+                                                    <td><?= $item->instituto ?></td>
+                                                    <td><?= $item->cod_oferta ?></td>
+                                                    <td><?= $item->carrera_digitacion ?></td>
+                                                    <td><?= $item->condicion_oferta ?></td>
+                                                    <td><?= $item->proceso_admision ?></td>
+                                                    <td><?= $item->decision_optimizacion ?></td>
+                                                    <td><?= $item->condicion_disertpa ?></td>
+                                                    <td><?= $item->nrooficio_disertpa ?></td>
+                                                    <td><?= $item->fechaoficio_disertpa ? date_format($item->fechaoficio_disertpa, 'd/m/Y') : '' ?></td>
+                                                    <td><?= $item->informacion_adicional ?></td>
                                                     <td><?= $item->updated_at ?></td>
                                                     <td>
                                                         <?php

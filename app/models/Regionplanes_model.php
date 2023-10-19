@@ -44,20 +44,59 @@ class RegionPlanes_model extends CI_Model
     public function store($request)
     {
         $data = array(
-            'region_id' => $request->region_id,
-            'codentidad' => $request->codentidad,
-            'entidad' => $request->entidad,
-            'titulo_entidad' => $request->titulo_entidad,
-            'codtipoentidad' => $request->codtipoentidad,
-            'codgestionentidad' => $request->codgestionentidad,
+            'documento_aprobacion' => $request->documento_aprobacion,
+            'fecha_aprobacion' => $request->fecha_aprobacion,
+            'cod_etapa_condicion' => $request->cod_etapa_condicion,
+            'ord_referencia' => $request->ord_referencia,
+            'observaciones' => $request->observaciones,
+            'fecha_inicio' => $request->fecha_inicio,
+            'fecha_fin' => $request->fecha_fin,
+            'ruta_alterna' => $request->ruta_alterna,
+            'visible' => $request->visible,
             'estado' => $request->estado,
-            'flag_visible' => $request->flag_visible,
-            'flag_formulario' => $request->flag_formulario
+            'created_by' => $request->created_by,
+            'updated_by' => $request->updated_by,
         );
 
         $model = new Region_Opti();
         $model->fill($data);
-        $model->save($data);
+        //$model->save($data);
+        if (!$model->save($data)) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+    }
+
+    /*
+    Store the record in the database
+    */
+    public function update($request)
+    {
+        $model = Region_Opti::findOrFail($request->id);
+        $data = array(
+            'documento_aprobacion' => $request->documento_aprobacion,
+            'fecha_aprobacion' => $request->fecha_aprobacion,
+            'cod_etapa_condicion' => $request->cod_etapa_condicion,
+            'ord_referencia' => $request->ord_referencia,
+            'observaciones' => $request->observaciones,
+            'fecha_inicio' => $request->fecha_inicio,
+            'fecha_fin' => $request->fecha_fin,
+            'ruta_alterna' => $request->ruta_alterna,
+            'visible' => $request->visible,
+            'estado' => $request->estado,
+            'created_by' => $request->created_by,
+            'updated_by' => $request->updated_by,
+        );
+        
+        $model->fill($data);
+        //$model->save($data);
+        if (!$model->save($data)) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+        
     }
 
     public static function getRegionesPlanes()

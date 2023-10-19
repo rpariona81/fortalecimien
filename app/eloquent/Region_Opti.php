@@ -69,22 +69,5 @@ class Region_Opti extends BaseModel
         'fecha_fin' => 'datetime:Y-m-d'
     ];
     
-    public static function getRegionesPlanes()
-    {
-        $cantIEST = DB::table('t_institutos')
-            ->selectRaw('count(id) as cantIest, id_region')
-            ->groupBy('id_region');
-
-        $data = Region_Opti::leftjoin('cod_etapa', 'cod_etapa.id', '=', 't_regiones_etapa_opti.cod_etapa')
-            ->leftjoinSub($cantIEST, 'cantIest', function ($join) {
-                $join->on('t_regiones_etapa_opti.region_id', '=', 'cantIEST.id_region');
-            })
-            ->where('t_regiones_etapa_opti.cod_etapa',4)
-            ->where('t_regiones_etapa_opti.visible',1)
-            ->where('t_regiones_etapa_opti.region_id',5)
-            ->orderBy('t_regiones_etapa_opti.id_region', 'asc')
-            ->get(['t_regiones_etapa_opti.*', 'cod_etapa.item', 'cantIEST.cantIest']);
-
-        return $data;
-    }
+    
 }
