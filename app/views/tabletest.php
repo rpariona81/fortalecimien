@@ -325,31 +325,25 @@
                                                 <th colspan="7" class="heading"><span style="float: right">Jquery Datatables</span></th>
                                             </tr>
                                             <tr class="bg-warning text-dark">
-                                                <th>Order</th>
-                                                <th>Start Date</th>
-                                                <th>Salary</th>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
+                                                <th>Región ID</th>
+                                                <th>Región</th>
+                                                <th>Cant IEST</th>
+                                                <th>Etapa ID</th>
+                                                <th>Etapa</th>
+                                                <th>Doc Aprobación</th>
+                                                <th>Fecha Doc</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php foreach ($query as $item) : ?>
                                                 <tr>
-                                                    <td><?= $item->id ?></td>
                                                     <td><?= $item->region_id ?></td>
-                                                    <td><?= $item->codentidad ?></td>
-                                                    <td><?= $item->entidad ?></td>
-                                                    <td><?= $item->titulo_entidad ?></td>
-                                                    <td class="text-center">
-                                                        <?php
-                                                        if ($item->codtipoentidad == NULL) {
-                                                        } else {
-                                                            echo '<a class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="bottom" title="Descargar CV" target="_blank" download="' . $item->codtipoentidad . '" href="' . base_url('/uploads/filescv/' . $item->codtipoentidad) . '"><i class="fa fa-file-pdf-o" title="' . $item->codtipoentidad . '"></i></a></td>';
-                                                        }
-                                                        ?>
-                                                    <td><?= $item->codgestionentidad ?></td>
+                                                    <td><?= $item->region ?></td>
+                                                    <td><?= $item->cant_institutos ?></td>
+                                                    <td><?= $item->cod_etapa ?></td>
+                                                    <td><?= $item->item ?></td>
+                                                    <td><?= $item->documento_aprobacion ?></td>
+                                                    <td><?= $item->fecha_aprobacion ? date_format($item->fecha_aprobacion,'d/m/Y'):'' ?></td>
                                                 </tr>
                                             <?php endforeach; ?>
                                         </tbody>
