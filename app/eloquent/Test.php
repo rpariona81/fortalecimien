@@ -12,6 +12,7 @@ class Test extends BaseModel
      * @var string
      */
     protected $table = 't_entidades';
+    //protected $table = 't_entidades';
     
     /**
      * The attributes that are mass assignable.

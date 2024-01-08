@@ -322,9 +322,9 @@
                                     <table id="example" class="table table-hover" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th colspan="7" class="heading"><span style="float: right">Jquery Datatables</span></th>
+                                                <th colspan="9" class="heading"><span style="float: right">Jquery Datatables</span></th>
                                             </tr>
-                                            <tr class="bg-warning text-dark">
+                                            <tr class="text-info bg-light">
                                                 <th>Región ID</th>
                                                 <th>Región</th>
                                                 <th>Cant IEST</th>
